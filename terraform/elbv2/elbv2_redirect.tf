@@ -50,6 +50,7 @@ resource "aws_lb_listener" "redirect" {
 
     authenticate_cognito {
       user_pool_arn = ""
+    # oak9: aws_alb_listener.default_action.authenticate_cognito.user_pool_arn is not configured
     }
   }
 }
