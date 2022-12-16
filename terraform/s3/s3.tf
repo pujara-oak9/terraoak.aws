@@ -136,6 +136,7 @@ resource "aws_s3_bucket_ownership_controls" "example" {
 
   rule {
     object_ownership = "BucketOwnerPreferred"
+  # oak9: Your S3 Object Ownership design is not aligned with AWS best practices.  You are using the BucketOwnerPreferred pattern
   }
 }
 
