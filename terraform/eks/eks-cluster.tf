@@ -39,7 +39,7 @@ resource "aws_eks_cluster" "demo" {
   role_arn = aws_iam_role.demo-cluster.arn
 
   encryption_config {
-        resources = []
+        resources = "secrets"
         provider {
             key_arn = aws_kms_key.kms_key.arn
         }
