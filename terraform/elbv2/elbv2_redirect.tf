@@ -33,6 +33,7 @@ resource "aws_lb" "application" {
 }
 
 resource "aws_lb_listener" "redirect" {
+  # oak9: aws_lb_listener.alpn_policy is not configured
   load_balancer_arn = aws_lb.application.arn
   
   port              = "80"
