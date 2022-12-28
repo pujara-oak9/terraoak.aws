@@ -2,6 +2,7 @@ resource "aws_api_gateway_deployment" "foo" {
   # All options # Must be configured
   rest_api_id       = aws_api_gateway_rest_api.foo.id
   description       = "Foo api-gw deployment"
+  # oak9: aws_api_gateway_deployment.stage_description is not configured
   stage_description = "Foo api-gw deployment stage"
 
   # Conflicts with resource type stage
