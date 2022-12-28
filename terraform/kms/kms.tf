@@ -34,6 +34,7 @@ POLICY
 resource "aws_kms_alias" "foo_kms" {
   # All options # Must be configured
   name          = "alias/bar"
+  # oak9: kms.alias[0].alias_name is not configured
   target_key_id = aws_kms_key.foo_kms.id
 }
 
