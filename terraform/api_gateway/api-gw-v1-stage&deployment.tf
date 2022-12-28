@@ -63,6 +63,7 @@ EOF
   }
 
   tags = {
+    # oak9: aws_api_gateway_stage.tags is not configured
     Environment = "production"
     Application = "foo"
   }
