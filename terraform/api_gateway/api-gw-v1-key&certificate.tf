@@ -7,6 +7,7 @@ resource "aws_api_gateway_api_key" "foo" {
 
   # Must be present
   tags = {
+    # oak9: aws_api_gateway_api_key.tags is not configured
     Environment = "production"
     Application = "foo"
   }
