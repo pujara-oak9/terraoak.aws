@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "foo" {
+  # oak9: s3.bucket.lifecycle_configuration.rules[1].status is not configured
   # oak9: s3.bucket.lifecycle_configuration.rules[0].status is not configured
   bucket_prefix = "foo-bucket"
   # For public bucket: PubilcRead,PublicReadWrite,AuthenticateRead 
