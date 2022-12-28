@@ -2,6 +2,7 @@ resource "aws_lb" "application" {
   name_prefix        = "foo"
   internal           = false
   load_balancer_type = ""
+  # oak9: aws_alb.load_balancer_type is not configured
   subnet_mapping {
     subnet_id = ""
   }
@@ -50,11 +51,13 @@ resource "aws_lb_listener" "redirect" {
 
     authenticate_cognito {
       user_pool_arn = ""
+    # oak9: aws_lb_listener.default_action.authenticate_cognito.user_pool_arn is not configured
     }
   }
 }
 
 resource "aws_lb_listener_rule" "redirect-rule" {
+  # oak9: aws_lb_listener_rule.action.authenticate_cognito.user_pool_arn is not configured
   listener_arn = aws_lb_listener.application.arn
 
   action {
