@@ -81,6 +81,7 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   tags = {
+      # oak9: aws_elasticsearch_domain.tags is not configured
       Domain = local.elk_domain
   }
 }
