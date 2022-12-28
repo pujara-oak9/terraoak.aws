@@ -31,6 +31,7 @@ resource "aws_api_gateway_client_certificate" "foo" {
 }
 
  resource "aws_api_gateway_domain_name" "example" {
+   # oak9: aws_api_gateway_domain_name.tags is not configured
    # All options # Must be configured
    domain_name = "foo.example.com"
    certificate_name        = "example-api"
