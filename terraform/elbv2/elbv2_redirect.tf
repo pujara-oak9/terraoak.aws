@@ -55,6 +55,7 @@ resource "aws_lb_listener" "redirect" {
 }
 
 resource "aws_lb_listener_rule" "redirect-rule" {
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.authorization_endpoint is not configured
   # oak9: aws_lb_listener_rule.action.authenticate_cognito.user_pool_domain is not configured
   # oak9: aws_lb_listener_rule.action.target_group_arn is not configured
   listener_arn = aws_lb_listener.application.arn
