@@ -2,6 +2,7 @@ resource "aws_lb" "application" {
   name_prefix        = "foo"
   internal           = false
   load_balancer_type = ""
+  # oak9: aws_alb.load_balancer_type is not configured
   subnet_mapping {
     subnet_id = ""
   }
