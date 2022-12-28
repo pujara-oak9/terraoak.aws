@@ -117,6 +117,7 @@ resource "aws_s3_bucket" "foo" {
 
   # Must be specified
   tags = {
+    # oak9: aws_s3_bucket.tags is not configured
     Name        = "foo-bucket"
     Environment = "Production"
   }
