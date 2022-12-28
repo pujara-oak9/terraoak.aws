@@ -15,6 +15,7 @@ resource "aws_api_gateway_method_settings" "foo" {
 }
 
 resource "aws_api_gateway_usage_plan" "foo" {
+  # oak9: aws_api_gateway_usage_plan.tags is not configured
   name         = "foo-usage-plan"
   description  = "my foo usage plan"
   product_code = "MYCODE"
