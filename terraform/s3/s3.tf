@@ -55,6 +55,7 @@ resource "aws_s3_bucket" "foo" {
 
   logging {
     target_bucket = ""
+    # oak9: aws_s3_bucket.logging.target_bucket is not configured
     target_prefix = "log/"
   }
 
