@@ -7,6 +7,7 @@ resource "aws_api_gateway_rest_api" "foo" {
   endpoint_configuration {
     # Must be configured
     types = ["EDGE"]
+  # oak9: aws_api_gateway_rest_api.endpoint_configuration.types has an edge optimized configuration for the API
   }
 }
 
