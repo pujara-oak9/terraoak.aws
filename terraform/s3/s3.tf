@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "foo" {
   acceleration_status = "Enabled"
   force_destroy       = false
   request_payer       = "BucketOwner"
-  object_lock_enabled = false
+  object_lock_enabled = "Enabled"
 
   server_side_encryption_configuration {
     # All options # Must be configured
