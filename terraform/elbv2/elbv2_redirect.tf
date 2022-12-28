@@ -1,4 +1,5 @@
 resource "aws_lb" "application" {
+  # oak9: aws_lb.subnet_mapping.private_ipv4_address is not configured
   # oak9: aws_lb.subnet_mapping.allocation_id is not configured
   name_prefix        = "foo"
   internal           = false
