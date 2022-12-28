@@ -33,6 +33,7 @@ resource "aws_lb" "application" {
 }
 
 resource "aws_lb_listener" "redirect" {
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.authorization_endpoint is not configured
   # oak9: aws_lb_listener.default_action.authenticate_cognito.user_pool_domain is not configured
   # oak9: aws_lb_listener.default_action.authenticate_cognito.session_timeout is not configured
   # oak9: aws_lb_listener.default_action.authenticate_cognito.session_cookie_name is not configured
