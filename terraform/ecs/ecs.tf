@@ -89,6 +89,7 @@ resource "aws_ecs_service" "test-service" {
 }
 
 resource "aws_ecs_task_set" "example" {
+  # oak9: ecs.task_set[0].load_balancers is not configured
   service         = aws_ecs_service.example.id
   cluster         = aws_ecs_cluster.test-cluster.id
   task_definition = aws_ecs_task_definition.test-def.arn
