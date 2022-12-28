@@ -59,7 +59,7 @@ resource "aws_s3_bucket" "foo" {
   }
 
   versioning {
-    enabled = false # Must be configured
+    enabled = true
   }
 
   replication_configuration {
