@@ -55,6 +55,7 @@ resource "aws_lb_listener" "redirect" {
 }
 
 resource "aws_lb_listener_rule" "redirect-rule" {
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.issuer is not configured
   # oak9: aws_lb_listener_rule.action.authenticate_oidc.client_secret is not configured
   # oak9: aws_lb_listener_rule.action.authenticate_oidc.client_id is not configured
   # oak9: aws_lb_listener_rule.action.authenticate_oidc.authorization_endpoint is not configured
