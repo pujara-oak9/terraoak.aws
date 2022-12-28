@@ -1,4 +1,6 @@
 resource "aws_lb" "application" {
+  # oak9: aws_lb.subnet_mapping.private_ipv4_address is not configured
+  # oak9: aws_lb.subnet_mapping.allocation_id is not configured
   name_prefix        = "foo"
   internal           = false
   load_balancer_type = ""
@@ -33,6 +35,20 @@ resource "aws_lb" "application" {
 }
 
 resource "aws_lb_listener" "redirect" {
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.user_info_endpoint is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.token_endpoint is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.issuer is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.client_secret is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.authorization_endpoint is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.user_pool_domain is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.session_timeout is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.session_cookie_name is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.on_unauthenticated_request is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_oidc.client_id is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.user_pool_client_id is not configured
+  # oak9: elastic_load_balancing_v2.listener[0].certificates is not configured
+  # oak9: aws_lb_listener.default_action.authenticate_cognito.authentication_request_extra_params is not configured
+  # oak9: aws_lb_listener.alpn_policy is not configured
   load_balancer_arn = aws_lb.application.arn
   
   port              = "80"
@@ -55,6 +71,14 @@ resource "aws_lb_listener" "redirect" {
 }
 
 resource "aws_lb_listener_rule" "redirect-rule" {
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.user_info_endpoint is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.token_endpoint is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.issuer is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.client_secret is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.client_id is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_oidc.authorization_endpoint is not configured
+  # oak9: aws_lb_listener_rule.action.authenticate_cognito.user_pool_domain is not configured
+  # oak9: aws_lb_listener_rule.action.target_group_arn is not configured
   listener_arn = aws_lb_listener.application.arn
 
   action {

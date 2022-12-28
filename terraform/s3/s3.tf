@@ -1,4 +1,6 @@
 resource "aws_s3_bucket" "foo" {
+  # oak9: s3.bucket.lifecycle_configuration.rules[1].status is not configured
+  # oak9: s3.bucket.lifecycle_configuration.rules[0].status is not configured
   bucket_prefix = "foo-bucket"
   # For public bucket: PubilcRead,PublicReadWrite,AuthenticateRead 
   #   And For Private bucket: Private,AuthenticateRead,LogDeliveryWrite,BucketOwnerRead,BucketOwnerFullControl,AwsExecRead
@@ -117,6 +119,7 @@ resource "aws_s3_bucket" "foo" {
 
   # Must be specified
   tags = {
+    # oak9: aws_s3_bucket.tags is not configured
     Name        = "foo-bucket"
     Environment = "Production"
   }
