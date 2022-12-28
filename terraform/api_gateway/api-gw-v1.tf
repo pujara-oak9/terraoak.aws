@@ -1,4 +1,5 @@
 resource "aws_api_gateway_rest_api" "foo" {
+  # oak9: aws_api_gateway_rest_api.tags is not configured
   name                         = "foo" # Must be configured
   description                  = "This is a demo api-gw template" # Must be configured
   disable_execute_api_endpoint = false

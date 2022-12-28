@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "foo" {
   acceleration_status = "Enabled"
   force_destroy       = false
   request_payer       = "BucketOwner"
-  object_lock_enabled = false
+  object_lock_enabled = "Enabled"
 
   server_side_encryption_configuration {
     # All options # Must be configured
@@ -55,11 +55,12 @@ resource "aws_s3_bucket" "foo" {
 
   logging {
     target_bucket = ""
+    # oak9: aws_s3_bucket.logging.target_bucket is not configured
     target_prefix = "log/"
   }
 
   versioning {
-    enabled = false # Must be configured
+    enabled = true
   }
 
   replication_configuration {
