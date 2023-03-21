@@ -36,6 +36,7 @@ resource "aws_iam_role" "db_proxy_role" {
   })
 
   tags = {
+    # oak9: Define asset inventory tags
     tag-key = "tag-value"
   }
 }
