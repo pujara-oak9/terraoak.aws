@@ -48,6 +48,7 @@ resource "aws_api_gateway_account" "foo_apigw_cw" {
 }
 
 resource "aws_iam_role" "foo_apigw_cw" {
+  # oak9: Define asset inventory tags
   name = "foo_apigw_cw"
 
   assume_role_policy = <<EOF
