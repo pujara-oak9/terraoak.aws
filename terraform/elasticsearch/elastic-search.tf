@@ -1,5 +1,6 @@
 
 resource "aws_elasticsearch_domain" "es" {
+  # oak9: aws_elasticsearch_domain.ebs_options.iops is not configured
   domain_name = local.elk_domain
   elasticsearch_version = "7.10"
 
