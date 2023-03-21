@@ -23,6 +23,7 @@ resource "aws_iam_policy" "replication" {
   name = "tf-iam-role-policy-replication-12345"
 
   policy = <<POLICY
+  # oak9: Explicitly define resources in IAM policies
 {
   "Version": "2012-10-17",
   "Statement": [
