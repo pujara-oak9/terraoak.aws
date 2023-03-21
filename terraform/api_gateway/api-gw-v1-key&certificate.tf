@@ -24,6 +24,7 @@ resource "aws_api_gateway_rest_api_policy" "foo" {
   rest_api_id = aws_api_gateway_rest_api.foo.id
 
   policy= ""
+  # oak9: Define resource based policies
 } 
 
 resource "aws_api_gateway_client_certificate" "foo" {
