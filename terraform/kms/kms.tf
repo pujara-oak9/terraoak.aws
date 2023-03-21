@@ -1,6 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_kms_key" "foo_kms" {
+  # oak9: aws_kms_key.tags is not configured
   description              = "KMS key template"
   deletion_window_in_days  = 7
   customer_master_key_spec = "SYMMETRIC_DEFAULT" # Must be configured
