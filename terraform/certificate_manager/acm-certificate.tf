@@ -22,6 +22,7 @@ resource "aws_acm_certificate" "foo" {
 
 
 resource "aws_acm_certificate_validation" "default" {
+   # oak9: aws_acm_certificate.tags is not configured
    
   certificate_arn=aws_acm_certificate.foo.arn
   validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
