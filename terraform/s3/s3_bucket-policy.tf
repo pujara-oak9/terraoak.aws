@@ -3,6 +3,7 @@ resource "aws_s3_bucket_policy" "foo" {
 
   # Terraform's "jsonencode" function converts a Terraform expression's result to valid JSON syntax.
   policy = <<POLICY
+  # oak9: Explicitly define S3 bucket actions instead of using wildcards ['*', 's3:*']
   {
   "Version": "2012-10-17",
   "Statement": [
