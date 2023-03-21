@@ -21,7 +21,7 @@ resource "aws_elasticsearch_domain" "es" {
       dedicated_master_enabled = true
       instance_count = 3
       instance_type = "r5.large.elasticsearch"
-      zone_awareness_enabled = false
+      zone_awareness_enabled = true
       zone_awareness_config {
         availability_zone_count = 0
       }
