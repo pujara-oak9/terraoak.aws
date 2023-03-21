@@ -126,7 +126,7 @@ resource "aws_s3_bucket_public_access_block" "foo" {
   # All options # Must be configured # Must be true for private bucket
   bucket = aws_s3_bucket.foo.id
   block_public_acls       = false
-  block_public_policy     = false
+  block_public_policy     = true
   ignore_public_acls      = false
   restrict_public_buckets = true
 }
