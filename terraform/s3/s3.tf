@@ -117,6 +117,7 @@ resource "aws_s3_bucket" "foo" {
 
   # Must be specified
   tags = {
+    # oak9: Define Tags for S3 bucket
     Name        = "foo-bucket"
     Environment = "Production"
   }
