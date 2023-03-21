@@ -49,6 +49,7 @@ resource "aws_s3_bucket" "foo" {
     allowed_headers = ""                           # Must be configured
     allowed_methods = "GET"                           # Must be configured
     allowed_origins = "*"                          # Must be configured
+    # oak9: CORS configuration should only allow requests from trusted origins
     expose_headers  = ""                           # Must be configured
     max_age_seconds = 3000
   }
@@ -125,9 +126,9 @@ resource "aws_s3_bucket" "foo" {
 resource "aws_s3_bucket_public_access_block" "foo" {
   # All options # Must be configured # Must be true for private bucket
   bucket = aws_s3_bucket.foo.id
-  block_public_acls       = false
+  block_public_acls       = true
   block_public_policy     = false
-  ignore_public_acls      = false
+  ignore_public_acls      = true
   restrict_public_buckets = false
 }
 
