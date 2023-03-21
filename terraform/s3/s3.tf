@@ -49,6 +49,7 @@ resource "aws_s3_bucket" "foo" {
     allowed_headers = ""                           # Must be configured
     allowed_methods = "GET"                           # Must be configured
     allowed_origins = "*"                          # Must be configured
+    # oak9: CORS configuration should only allow requests from trusted origins
     expose_headers  = ""                           # Must be configured
     max_age_seconds = 3000
   }
