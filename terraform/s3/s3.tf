@@ -1,4 +1,5 @@
-resource "aws_s3_bucket" "foo" {
+resource "aws_s3_bucket" "foo" { # oak9:  should be set to any of enabled, true
+  # oak9: Design S3 Object Ownership to use Bucket Owner Enforced instead of Bucket Owner Preferred to align with AWS best practices
   bucket_prefix = "foo-bucket"
   # For public bucket: PubilcRead,PublicReadWrite,AuthenticateRead 
   #   And For Private bucket: Private,AuthenticateRead,LogDeliveryWrite,BucketOwnerRead,BucketOwnerFullControl,AwsExecRead
@@ -126,9 +127,9 @@ resource "aws_s3_bucket_public_access_block" "foo" {
   # All options # Must be configured # Must be true for private bucket
   bucket = aws_s3_bucket.foo.id
   block_public_acls       = false
-  block_public_policy     = false
+  block_public_policy     = true
   ignore_public_acls      = false
-  restrict_public_buckets = false
+  restrict_public_buckets = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
