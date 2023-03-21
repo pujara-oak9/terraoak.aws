@@ -78,6 +78,7 @@ resource "aws_iam_role_policy" "foo_apigw_cw" {
   role = aws_iam_role.foo_apigw_cw.id
 
   policy = <<EOF
+  # oak9: Explicitly define resources in roles
 {
     "Version": "2012-10-17",
     "Statement": [
