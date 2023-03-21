@@ -1,4 +1,5 @@
 resource "aws_iam_role" "demo-node" {
+  # oak9: Define asset inventory tags
   name = "terraform-eks-demo-node"
 
   assume_role_policy = <<POLICY
@@ -33,6 +34,7 @@ resource "aws_iam_role_policy_attachment" "demo-node-AmazonEC2ContainerRegistryR
 }
 
 resource "aws_eks_node_group" "demo" {
+  # oak9: Define asset inventory tags
   cluster_name    = aws_eks_cluster.demo.name
   node_group_name = "demo"
   node_role_arn   = aws_iam_role.demo-node.arn

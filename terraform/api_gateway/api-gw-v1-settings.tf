@@ -15,6 +15,7 @@ resource "aws_api_gateway_method_settings" "foo" {
 }
 
 resource "aws_api_gateway_usage_plan" "foo" {
+  # oak9: Define asset inventory tags
   name         = "foo-usage-plan"
   description  = "my foo usage plan"
   product_code = "MYCODE"
@@ -48,6 +49,7 @@ resource "aws_api_gateway_account" "foo_apigw_cw" {
 }
 
 resource "aws_iam_role" "foo_apigw_cw" {
+  # oak9: Define asset inventory tags
   name = "foo_apigw_cw"
 
   assume_role_policy = <<EOF

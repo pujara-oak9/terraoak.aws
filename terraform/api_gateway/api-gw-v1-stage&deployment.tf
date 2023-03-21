@@ -63,6 +63,7 @@ EOF
   }
 
   tags = {
+    # oak9: Define asset inventory tags
     Environment = "production"
     Application = "foo"
   }

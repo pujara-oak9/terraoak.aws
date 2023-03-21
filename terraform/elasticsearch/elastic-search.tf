@@ -47,6 +47,7 @@ resource "aws_elasticsearch_domain" "es" {
   encrypt_at_rest {
     enabled    = false
     kms_key_id = ""
+  # oak9: aws_elasticsearch_domain.encrypt_at_rest.kms_key_id does not have the value set for KMS key
   }
   
   advanced_security_options {
@@ -81,6 +82,7 @@ resource "aws_elasticsearch_domain" "es" {
   }
 
   tags = {
+      # oak9: aws_elasticsearch_domain.tags is not configured
       Domain = local.elk_domain
   }
 }

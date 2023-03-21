@@ -6,6 +6,7 @@
 #
 
 resource "aws_iam_role" "demo-cluster" {
+  # oak9: Define asset inventory tags
   name = "terraform-eks-demo-cluster"
 
   assume_role_policy = <<POLICY
