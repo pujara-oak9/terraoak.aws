@@ -1,5 +1,6 @@
 
 resource "aws_iam_role" "replication" {
+  # oak9: Define asset inventory tags
   name = "tf-iam-role-replication-12345"
 
   assume_role_policy = <<POLICY
